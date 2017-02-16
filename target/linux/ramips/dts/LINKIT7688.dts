@@ -62,9 +62,9 @@
 			m25p80@0 {
 				#address-cells = <1>;
 				#size-cells = <1>;
-				compatible = "mx25l25635e";
+				compatible = "mx25l51245g";
 				reg = <0 0>;
-				linux,modalias = "m25p80", "mx25l25635e";
+				linux,modalias = "m25p80", "mx25l51245g";
 				spi-max-frequency = <40000000>;
 				m25p,chunked-io = <31>;
 
@@ -88,6 +88,11 @@
 				partition@50000 {
 					label = "firmware";
 					reg = <0x50000 0x1fb0000>;
+				};
+
+				partition@2000000 {
+					label = "user-data";
+					reg = <0x2000000 0x2000000>;
 				};
 			};
 
